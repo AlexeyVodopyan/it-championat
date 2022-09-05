@@ -1,1 +1,1 @@
-from src.tables.telemetry import Telemetry
+from src.tables.telemetry import Telemetry, ParamType

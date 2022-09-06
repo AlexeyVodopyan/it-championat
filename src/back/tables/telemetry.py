@@ -2,10 +2,10 @@ import datetime
 import enum
 import uuid
 
-from sqlalchemy import Column, Float, String, DateTime, Integer
+from sqlalchemy import Column, Float, String, DateTime, Integer, ForeignKey
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy_utils import ChoiceType
-from src.db import Base
+from src.back.db import Base
 
 
 class ParamType(enum.Enum):
@@ -40,7 +40,7 @@ class ParamType(enum.Enum):
 
 class Telemetry(Base):
     __tablename__ = "telemetry"
-    well_id = Column(UUID(as_uuid=True), primary_key=True, comment="id скважины", default=uuid.uuid4)
+    id = Column(UUID(as_uuid=True), primary_key=True, comment="id скважины", default=uuid.uuid4)
     well_name = Column(String, comment="название скважины")
     created_at = Column(DateTime, comment="Дата создания записи")
     measured_at = Column(
@@ -52,3 +52,5 @@ class Telemetry(Base):
         nullable=False,
     )
     value = Column(Float, comment="Значение параметра")
+    well_id = Column(UUID(as_uuid=True), ForeignKey('well.id', ondelete="CASCADE"))
+

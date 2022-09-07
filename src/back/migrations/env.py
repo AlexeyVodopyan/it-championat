@@ -2,10 +2,10 @@ from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
-from src.db import SQLALCHEMY_DATABASE_URL
+from src.back.db import SQLALCHEMY_DATABASE_URL
 from alembic import context
-from src.db import Base
-import src.tables  # noqa
+from src.back.db import Base
+import src.back.tables  # noqa
 
 REVISION_TABLE_NAME = "vlp_alembic_version"
 

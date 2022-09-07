@@ -9,7 +9,7 @@ from alembic import op
 import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 import sqlalchemy_utils
-from src.tables.telemetry import ParamType
+from src.back.tables.telemetry import ParamType
 
 # revision identifiers, used by Alembic.
 revision = 'f4f0a0f0519d'

@@ -15,7 +15,7 @@ class EquipmentSchedule(Base):
     work_started = Column(DATE, comment='Дата начала работ')
     work_finished = Column(DATE, comment='Дата конца работ')
     
-    equipment_id = Column(UUID(as_uuid=True), ForeignKey('equipment.id'), ondelete='CASCADE')
+    equipment_id = Column(UUID(as_uuid=True), ForeignKey('equipment.id', ondelete='CASCADE'))
 
 
 class Equipment(Base):
@@ -29,5 +29,5 @@ class Equipment(Base):
     lifetime = Column(INTEGER, comment='Срок службы оборудования')
     user_note = Column(String, comment='Заметки пользователя')
     
-    owner_id = Column(UUID(as_uuid=True), ForeignKey('company.id'), ondelete='CASCADE')
-    well_id = Column(UUID(as_uuid=True), ForeignKey('well.id'), ondelete='CASCADE')
+    owner_id = Column(UUID(as_uuid=True), ForeignKey('company.id', ondelete='CASCADE'))
+    well_id = Column(UUID(as_uuid=True), ForeignKey('well.id', ondelete='CASCADE'))

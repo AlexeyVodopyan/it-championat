@@ -21,9 +21,10 @@ class Company(Base):
     name = Column(String, comment='Название компании')
     type = Column(
         ChoiceType(
-            choices=CompanyType(CompanyType, impl=Integer()),
+            CompanyType, impl=Integer(),
         ),
-        comment='Тип компании'
+        comment='Тип компании',
+        nullable=False
     )
 
     

@@ -1,0 +1,26 @@
+html {
+  font-size: 10px;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+}
+.container-column {
+  display: flex;
+  flex-direction: column;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+.flex-grow-1 {
+  flex-grow: 1;
+}

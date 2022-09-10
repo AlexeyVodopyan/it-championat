@@ -9,7 +9,7 @@ interface IGridLayoutProps {
 
 }
 const ResponsiveReactGridLayout = WidthProvider(Responsive)
-export const Layout: React.FC<IGridLayoutProps> = ({}) => {
+export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
   const layout = [
     { i: "a", x: 0, y: 0, w: 1, h: 2},
     { i: "b", x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },

@@ -26,13 +26,18 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4) Запустите файлик `src/app.py` через pycharm или командой
+4) Установите pre-хуки командой
+```bash
+pre-commit install
+```
+
+5) Запустите файлик `src/app.py` через pycharm или командой
 
 ```bash
 python src/app.py
 ```
 
-5) Теперь приложение запущено и доступно по адресу `localhost:8001/docs`
+6) Теперь приложение запущено и доступно по адресу `localhost:8001/docs`
 
 Для создания и запуска контейнера с БД необходимо запустить сервис postgres в папке:
 `docker/docker-compose.yml`
@@ -42,7 +47,7 @@ python src/app.py
 1) Создать миграцию:
 
 ```bash
-alembic revision --autogenerate -m "initial_migration" 
+alembic revision --autogenerate -m "initial_migration"
 ```
 
 2) Накатить миграцию на БД:
@@ -64,7 +69,7 @@ docker exec -i vlp-postgres psql -U vlp -v -d vlp < dump.sql
 
 ```bash
 docker exec -i vlp-postgres pg_restore -U vlp -v -d vlp < dump.sql
-``` 
+```
 
 Чтобы сгенерить телеметрию, запустите файлик `commands.py`
 

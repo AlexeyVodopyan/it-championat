@@ -1,9 +1,7 @@
 import React from 'react';
 import css from '../Main.module.css'
 import { Table, TableColumn } from '@consta/uikit/Table';
-import { MainHeader } from '../Header/Header';
-import { Footer } from '../Footer';
-import { File } from '@consta/uikit/File';
+import { IconDownload } from '@consta/uikit/IconDownload';
 import { mockRowDataForTable } from './__mock__'
 interface Props {
 
@@ -35,9 +33,9 @@ const columns: TableColumn<typeof rows[number]>[] = [
     {
         title: '',
         accessor: 'download',
-        width: 100,
+        width: 80,
         align: 'center',
-        renderCell: () => <File extension="xls" size='s'/>
+        renderCell: () => <IconDownload view='link' size='s'/>
     },
 ];
 export const Contracts: React.FC<Props> = ({ }) => {

@@ -43,9 +43,7 @@ const columns: TableColumn<typeof rows[number]>[] = [
 export const Contracts: React.FC<Props> = ({ }) => {
     return (
         <div className={css.container}>
-            <MainHeader />
             <Table rows={rows} columns={columns} borderBetweenColumns zebraStriped="even"/>;
-            <Footer />
         </div>
     );
 };

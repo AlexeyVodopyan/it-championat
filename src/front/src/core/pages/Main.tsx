@@ -2,7 +2,7 @@ import React from 'react';
 import {MainHeader} from './Header/Header';
 import css from './Main.module.css'
 import {Footer} from "./Footer";
-import {Layout} from "./GridLayout";
+import {GridLayout} from "./GridLayout";
 interface Props {
 
 }
@@ -10,9 +10,7 @@ interface Props {
 export const Main: React.FC<Props> = ({}) => {
   return (
     <div className={css.container}>
-      <MainHeader/>
-      <Layout />
-      <Footer />
+      <GridLayout />
     </div>
   );
 };

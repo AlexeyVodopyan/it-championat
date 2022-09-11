@@ -1,7 +1,7 @@
 import enum
 import uuid
 
-from sqlalchemy import Column, Integer
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 from sqlalchemy_utils.types import ChoiceType
@@ -24,6 +24,7 @@ class Well(Base):
         comment="Идентификатор скважины",
         default=uuid.uuid4,
     )
+    field = Column(String, comment="название месторождения")
     status = Column(
         ChoiceType(choices=WellDrillingStatus, impl=Integer()),
         comment="Статус строительства скважины",

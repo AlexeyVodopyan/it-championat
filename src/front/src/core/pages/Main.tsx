@@ -10,7 +10,7 @@ interface Props {
 export const Main: React.FC<Props> = ({}) => {
   return (
     <div className={css.container}>
-      <MainHeader/>
+      <MainHeader/>      
       <Layout />
       <Footer />
     </div>

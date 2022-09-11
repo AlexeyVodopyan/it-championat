@@ -8,12 +8,7 @@ interface IAreaChartProps {
 }
 
 export const AreaChart: React.FC<IAreaChartProps> = props => {
-    return <div className={css.chartWidget}>
-        <Area
-            style={{
-                overflow: 'hidden',
-                width: '100em'
-            }}
+    return <Area className={css.chartWidget}
             data={MOCK_DATA_FOR_AREA_CHART}
             xField="date"
             yField="value"
@@ -22,6 +17,5 @@ export const AreaChart: React.FC<IAreaChartProps> = props => {
                 start: 0,
                 end: 0.5,
             }}
-        />
-    </div>;
+    />;
 };

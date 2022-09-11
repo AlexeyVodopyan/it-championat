@@ -8,13 +8,10 @@ interface IBarChartProps {
 }
 
 export const BarChart: React.FC<IBarChartProps> = props => {
-    return <div className={css.chartWidget}>
-        <Bar
-            style={{ overflow: 'hidden', width: '100em'}}
+    return <Bar className={css.chartWidget}
             data={MOCK_DATA_FOR_BAR_CHART}
             label={{position: 'middle'}}
             xField="number"
             yField="parameter"
-        />
-    </div>;
+    />;
 };

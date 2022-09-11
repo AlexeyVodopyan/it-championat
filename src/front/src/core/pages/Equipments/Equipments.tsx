@@ -1,7 +1,7 @@
 import React from "react";
 import { Table, TableColumn } from "@consta/uikit/Table";
 import {мockEquipmentData} from "./__mock__"
-import {IconInfo} from "@consta/uikit/__internal__/src/icons/IconInfo/IconInfo";
+import {IconInfo} from "@consta/uikit/IconInfo";
 
 interface Props {}
 

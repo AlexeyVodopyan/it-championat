@@ -5,6 +5,7 @@ import {ColumnChart} from "./Widgets/Charts/ColumnChart";
 import "react-grid-layout/css/styles.css"
 import "react-resizable/css/styles.css"
 import css from './Layout.module.css'
+import {WaterfallChart} from "./Widgets/Charts/WaterfallChart";
 
 interface IGridLayoutProps {
 
@@ -25,7 +26,9 @@ export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
         layouts={{md: layout}}
         onLayoutChange={(Layout, allLayouts) => console.log('L26  === тут сохранение в локал стор', Layout, allLayouts)}
       >
-        <div key="a">a</div>
+        <div key="a" className={css.widgetContainer}>
+          <WaterfallChart/>
+        </div>
         <div key="b">b</div>
         <div key="c">c</div>
         <div key={'d'} className={css.widgetContainer}>

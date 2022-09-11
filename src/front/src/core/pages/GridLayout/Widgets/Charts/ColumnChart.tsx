@@ -8,15 +8,10 @@ interface IColumnChartProps {
 }
 
 export const ColumnChart: React.FC<IColumnChartProps> = props => {
-    return <div className={css.chartWidget}>
-        <Column
-            style={{
-                overflow: 'hidden',
-                width: '100em'
-            }}
+    return <Column
+            className={css.chartWidget}
             data={MOCK_DATA_FOR_COLUMN_CHART}
             xField="parameter"
             yField="number"
-        />
-    </div>;
+    />;
 };

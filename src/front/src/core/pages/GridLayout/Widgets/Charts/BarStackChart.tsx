@@ -8,15 +8,12 @@ interface IBarStackChartProps {
 }
 
 export const BarStackChart: React.FC<IBarStackChartProps> = props => {
-    return <div className={css.chartWidget}>
-        <Bar
-            style={{ overflow: 'hidden', width: '100em'}}
+    return <Bar className={css.chartWidget}
             data={MOCK_DATA_FOR_BAR_STACK_CHART}
             label={{position: 'middle'}}
             isStack
             xField="number"
             yField="parameter"
             seriesField="groupName"
-        />
-    </div>;
+    />;
 };

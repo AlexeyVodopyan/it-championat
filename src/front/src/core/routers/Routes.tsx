@@ -4,6 +4,7 @@ import Layout from '../layout/Layout'
 
 import { Main } from '../pages'
 import { Contracts } from '../pages/Contracts/Contracts'
+import { Equipments } from '../pages/Equipments/Equipments'
 import { PagesNames } from './pages'
 
 export const AppRoutes: React.FC = props => {
@@ -13,6 +14,7 @@ export const AppRoutes: React.FC = props => {
         <Route index element={<Main />}></Route>
         <Route path={`${PagesNames.Tablet}`} element={<Main />} />
         <Route path={`${PagesNames.Contracts}`} element={<Contracts />} />
+        <Route path={`${PagesNames.Equipment}`} element={<Equipments />} />
       </Route>
     </Routes>
   )

@@ -2,6 +2,7 @@ import React from 'react'
 import {Responsive, WidthProvider} from "react-grid-layout";
 import {Block} from "./Block";
 import {ColumnChart} from "./Widgets/Charts/ColumnChart";
+import {AreaChart} from "./Widgets/Charts/AreaChart";
 import "react-grid-layout/css/styles.css"
 import "react-resizable/css/styles.css"
 import css from './Layout.module.css'
@@ -16,7 +17,8 @@ export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
     { i: "b", x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
     { i: "c", x: 4, y: 0, w: 1, h: 2},
     { i: "d", x: 4, y: 0, w: 1, h: 2},
-    { i: "e", x: 0, y: 1, w: 1, h: 2}
+    { i: "columnChart", x: 0, y: 1, w: 2, h: 2},
+    { i: "areaChart", x: 0, y: 1, w: 2, h: 2},
   ];
   return (
     <div className={css.mainContainer}>
@@ -31,8 +33,11 @@ export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
         <div key={'d'} className={css.widgetContainer}>
           <Block />
         </div>
-        <div key={'e'} className={css.widgetContainer}>
+        <div key={'columnChart'} className={css.widgetContainer}>
           <ColumnChart />
+        </div>
+        <div key={'areaChart'} className={css.widgetContainer}>
+          <AreaChart />
         </div>
       </ResponsiveReactGridLayout>
     </div>

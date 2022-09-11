@@ -5,3 +5,18 @@ export const MOCK_DATA_FOR_COLUMN_CHART = [
     { parameter: 'Параметр 4', number: 301 },
     { parameter: 'Параметр 5', number: 167 },
 ]
+
+export const MOCK_DATA_FOR_AREA_CHART = [
+    { date: '2010-01-01', value: 1, groupName: 'A' },
+    { date: '2010-01-02', value: 10, groupName: 'A' },
+    { date: '2010-01-03', value: 15, groupName: 'A' },
+    { date: '2010-01-04', value: 5, groupName: 'A' },
+    { date: '2010-01-01', value: 10, groupName: 'B' },
+    { date: '2010-01-02', value: 20, groupName: 'B' },
+    { date: '2010-01-03', value: 30, groupName: 'B' },
+    { date: '2010-01-04', value: 40, groupName: 'B' },
+    { date: '2010-01-01', value: 50, groupName: 'C' },
+    { date: '2010-01-02', value: 25, groupName: 'C' },
+    { date: '2010-01-03', value: 12, groupName: 'C' },
+    { date: '2010-01-04', value: 6, groupName: 'C' },
+]

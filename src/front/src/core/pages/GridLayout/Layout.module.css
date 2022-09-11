@@ -8,6 +8,7 @@
 }
 .chartWidget {
     overflow: hidden;
+    width: 100em;
     border: 1px solid black;
     display: flex;
     flex: 1;

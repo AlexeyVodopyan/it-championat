@@ -16,14 +16,17 @@ export const MainMenu: React.FC< Props > = ({isSidebarOpen, onMenuClose}) => {
 
     const toGTIPage = () => {
       navigation(`/${PagesNames.GTI}`, { replace: true }) 
+      onMenuClose()
     }
 
     const toEquipmentPage = () => {
       navigation(`/${PagesNames.Equipment}`, { replace: true }) 
+      onMenuClose()
     }
 
     const toContractPage = () => {
       navigation(`/${PagesNames.Contracts}`, { replace: true }) 
+      onMenuClose()
     }
 
     return (

@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import {Waterfall} from "@consta/charts/Waterfall";
 import {useThemeVars} from "@consta/uikit/useThemeVars";
 import css from "../../Layout.module.css";
@@ -10,17 +10,23 @@ export const WaterfallChart: React.FC<any> = _ =>  {
 
     const [data, setData] = useState(MOCK_DATA_FOR_BAR_CHART);
 
-    setInterval(() => {
-        const newData = [];
-        const step = Math.floor(5 + Math.random() * 15);
-        for (let i = 0; i < 5; i++) {
-            const x = (i + 1) * step;
-            const y = Math.floor(-100 + Math.random() * 250);
-            const item = { x: x.toString(), y: y};
-            newData.push(item);
-        }
-        setData(newData);
-    }, 5000)
+    useEffect(() => {
+
+        const intervalId = setInterval(() => {
+            const newData = [];
+            const step = Math.floor(5 + Math.random() * 15);
+            for (let i = 0; i < 5; i++) {
+                const x = (i + 1) * step;
+                const y = Math.floor(-100 + Math.random() * 250);
+                const item = { x: x.toString(), y: y};
+                newData.push(item);
+            }
+            setData(newData);
+        }, 5000);
+
+        return () => clearInterval(intervalId);
+    }, []);
+
 
     return <div className={css.chartWidget}>
         <Waterfall style={{'width': '100%'}}

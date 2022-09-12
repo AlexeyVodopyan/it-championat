@@ -9,6 +9,7 @@ import {BarGroupChart} from "./Widgets/Charts/BarGroupChart";
 import "react-grid-layout/css/styles.css"
 import "react-resizable/css/styles.css"
 import css from './Layout.module.css'
+import {RadarChart} from "./Widgets/Charts/RadarChart";
 
 interface IGridLayoutProps {
 
@@ -18,7 +19,7 @@ export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
   const layout = [
     { i: "a", x: 0, y: 0, w: 1, h: 2},
     { i: "b", x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
-    { i: "c", x: 4, y: 0, w: 1, h: 2},
+    { i: "radarChart", x: 4, y: 0, w: 1, h: 2},
     { i: "d", x: 4, y: 0, w: 1, h: 2},
     { i: "columnChart", x: 0, y: 1, w: 2, h: 2},
     { i: "areaChart", x: 0, y: 1, w: 2, h: 2},
@@ -35,7 +36,9 @@ export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
       >
         <div key="a">a</div>
         <div key="b">b</div>
-        <div key="c">c</div>
+        <div key="radarChart" className={css.widgetContainer}>
+          <RadarChart/>
+        </div>
         <div key={'d'} className={css.widgetContainer}>
           <Block />
         </div>

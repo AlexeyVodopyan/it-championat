@@ -54,3 +54,26 @@ export const  MOCK_DATA_FOR_BAR_GROUP_CHART = [
     { parameter: 'Параметр 4', number: 301, groupName: 'B' },
     { parameter: 'Параметр 5', number: 167, groupName: 'B' },
 ]
+
+export const MOCK_DATA_FOR_RADAR_CHART = [
+    { name: 'Design', user: 'Person 1', star: 70431 },
+    { name: 'Design', user: 'Person 2', star: 29411 },
+    { name: 'Development', user: 'Person 1', star: 61342 },
+    { name: 'Development', user: 'Person 2', star: 73312 },
+    { name: 'Marketing', user: 'Person 1', star: 50023 },
+    { name: 'Marketing', user: 'Person 2', star: 60946 },
+    { name: 'Users', user: 'Person 1', star: 39056 },
+    { name: 'Users', user: 'Person 2', star: 48616 },
+    { name: 'Test', user: 'Person 1', star: 60623 },
+    { name: 'Test', user: 'Person 2', star: 72319 },
+    { name: 'Language', user: 'Person 1', star: 71321 },
+    { name: 'Language', user: 'Person 2', star: 50311 },
+    { name: 'Technology', user: 'Person 1', star: 49123 },
+    { name: 'Technology', user: 'Person 2', star: 40123 },
+    { name: 'Support', user: 'Person 1', star: 31302 },
+    { name: 'Support', user: 'Person 2', star: 40037 },
+    { name: 'Sales', user: 'Person 1', star: 60003 },
+    { name: 'Sales', user: 'Person 2', star: 39969 },
+    { name: 'UX', user: 'Person 1', star: 48134 },
+    { name: 'UX', user: 'Person 2', star: 63198 }
+]

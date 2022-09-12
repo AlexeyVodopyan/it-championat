@@ -4,7 +4,7 @@ import {useThemeVars} from "@consta/uikit/useThemeVars";
 import css from "../../Layout.module.css";
 import {MOCK_DATA_FOR_WATERFALL_CHART} from "../__mock__";
 
-export const WaterfallChart: React.FC<any> = _ =>  {
+export const WaterfallChart: React.FC<any> = _ => {
 
     const vars = useThemeVars()
 
@@ -18,7 +18,7 @@ export const WaterfallChart: React.FC<any> = _ =>  {
             for (let i = 0; i < 5; i++) {
                 const x = (i + 1) * step;
                 const y = Math.floor(-100 + Math.random() * 250);
-                const item = { x: x.toString(), y: y};
+                const item = {x: x.toString(), y: y};
                 newData.push(item);
             }
             setData(newData);
@@ -28,35 +28,33 @@ export const WaterfallChart: React.FC<any> = _ =>  {
     }, []);
 
 
-    return <div className={css.chartWidget}>
-        <Waterfall style={{'width': '100%'}}
-            data={data}
-            xField="x"
-            yField="y"
-            legend={{
-                layout: 'horizontal',
-                position: 'top-left',
-                marker: {
-                    symbol: 'square',
-                },
-            }}
-            risingFill={vars.color.primary['--color-bg-success']}
-            fallingFill={vars.color.primary['--color-bg-alert']}
-            total={{
-                style: {
-                    fill: vars.color.primary['--color-bg-system'],
-                },
-            }}
-            yAxis={{
-                grid: {
-                    line: {
-                        style: {
-                            lineDash: null,
-                            stroke: vars.color.primary['--color-bg-system'],
-                        }
-                    }
-                },
-            }}
-        />
-    </div>
+    return <Waterfall className={css.chartWidget}
+              data={data}
+              xField="x"
+              yField="y"
+              legend={{
+                  layout: 'horizontal',
+                  position: 'top-left',
+                  marker: {
+                      symbol: 'square',
+                  },
+              }}
+              risingFill={vars.color.primary['--color-bg-success']}
+              fallingFill={vars.color.primary['--color-bg-alert']}
+              total={{
+                  style: {
+                      fill: vars.color.primary['--color-bg-system'],
+                  },
+              }}
+              yAxis={{
+                  grid: {
+                      line: {
+                          style: {
+                              lineDash: null,
+                              stroke: vars.color.primary['--color-bg-system'],
+                          }
+                      }
+                  },
+              }}
+    />
 }

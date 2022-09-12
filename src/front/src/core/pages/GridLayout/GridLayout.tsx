@@ -29,7 +29,7 @@ const defaultLayout = [
 const ResponsiveReactGridLayout = WidthProvider(Responsive)
 export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
   const layoutStr = localStorage.getItem ("layout")
-  const layout = layoutStr == null
+  const layout = !layoutStr
       ? JSON.parse(layoutStr!)
       : defaultLayout;
 
@@ -38,7 +38,7 @@ export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
       <ResponsiveReactGridLayout
         className="layout"
         layouts={{lg: layout}}
-        cols={{lg: 12, md: 10, sm: 6, xs: 4, xxs: 2}}
+        cols={{lg: 12}}
         onLayoutChange={(Layout, allLayouts) => localStorage.setItem ("layout", JSON.stringify(Layout))}
       >
         <div key="a">a</div>

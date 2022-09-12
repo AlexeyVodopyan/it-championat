@@ -1,5 +1,6 @@
 import React from 'react'
 import {Responsive, WidthProvider} from "react-grid-layout";
+import {Text} from '@consta/uikit/Text'
 import {Block} from "./Block";
 import {ColumnChart} from "./Widgets/Charts/ColumnChart";
 import {AreaChart} from "./Widgets/Charts/AreaChart";
@@ -37,6 +38,7 @@ export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
         <div key="a">a</div>
         <div key="b">b</div>
         <div key="radarChart" className={css.widgetContainer}>
+          <Text size={'s'}>Радарная диаграмма</Text>
           <RadarChart/>
         </div>
         <div key={'d'} className={css.widgetContainer}>

@@ -29,7 +29,7 @@ const defaultLayout = [
 const ResponsiveReactGridLayout = WidthProvider(Responsive)
 export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
   const layoutStr = localStorage.getItem ("layout")
-  const layout = !layoutStr
+  const layout = layoutStr
       ? JSON.parse(layoutStr!)
       : defaultLayout;
 

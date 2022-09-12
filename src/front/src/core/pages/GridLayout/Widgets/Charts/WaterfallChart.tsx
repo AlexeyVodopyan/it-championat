@@ -2,13 +2,13 @@ import React, {useEffect, useState} from "react"
 import {Waterfall} from "@consta/charts/Waterfall";
 import {useThemeVars} from "@consta/uikit/useThemeVars";
 import css from "../../Layout.module.css";
-import {MOCK_DATA_FOR_BAR_CHART} from "../__mock__";
+import {MOCK_DATA_FOR_WATERFALL_CHART} from "../__mock__";
 
 export const WaterfallChart: React.FC<any> = _ =>  {
 
     const vars = useThemeVars()
 
-    const [data, setData] = useState(MOCK_DATA_FOR_BAR_CHART);
+    const [data, setData] = useState(MOCK_DATA_FOR_WATERFALL_CHART);
 
     useEffect(() => {
 

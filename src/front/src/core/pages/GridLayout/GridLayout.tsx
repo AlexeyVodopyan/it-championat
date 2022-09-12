@@ -2,6 +2,10 @@ import React from 'react'
 import {Responsive, WidthProvider} from "react-grid-layout";
 import {Block} from "./Block";
 import {ColumnChart} from "./Widgets/Charts/ColumnChart";
+import {AreaChart} from "./Widgets/Charts/AreaChart";
+import {BarChart} from "./Widgets/Charts/BarChart";
+import {BarStackChart} from "./Widgets/Charts/BarStackChart";
+import {BarGroupChart} from "./Widgets/Charts/BarGroupChart";
 import "react-grid-layout/css/styles.css"
 import "react-resizable/css/styles.css"
 import css from './Layout.module.css'
@@ -16,7 +20,11 @@ export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
     { i: "b", x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
     { i: "c", x: 4, y: 0, w: 1, h: 2},
     { i: "d", x: 4, y: 0, w: 1, h: 2},
-    { i: "e", x: 0, y: 1, w: 1, h: 2}
+    { i: "columnChart", x: 0, y: 1, w: 2, h: 2},
+    { i: "areaChart", x: 0, y: 1, w: 2, h: 2},
+    { i: "barChart", x: 0, y: 1, w: 1, h: 2},
+    { i: "barStackChart", x: 0, y: 1, w: 1, h: 2},
+    { i: "barGroupChart", x: 0, y: 1, w: 1, h: 2},
   ];
   return (
     <div className={css.mainContainer}>
@@ -31,8 +39,20 @@ export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
         <div key={'d'} className={css.widgetContainer}>
           <Block />
         </div>
-        <div key={'e'} className={css.widgetContainer}>
+        <div key={'columnChart'} className={css.widgetContainer}>
           <ColumnChart />
+        </div>
+        <div key={'areaChart'} className={css.widgetContainer}>
+          <AreaChart />
+        </div>
+        <div key={'barChart'} className={css.widgetContainer}>
+          <BarChart />
+        </div>
+        <div key={'barStackChart'} className={css.widgetContainer}>
+          <BarStackChart />
+        </div>
+        <div key={'barGroupChart'} className={css.widgetContainer}>
+          <BarGroupChart />
         </div>
       </ResponsiveReactGridLayout>
     </div>

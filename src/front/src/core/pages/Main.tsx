@@ -1,8 +1,6 @@
 import React from 'react';
-import {MainHeader} from './Header/Header';
 import css from './Main.module.css'
-import {Footer} from "./Footer";
-import {GridLayout} from "./GridLayout";
+import {GridLayout} from "./GridLayout/GridLayout";
 interface Props {
 
 }

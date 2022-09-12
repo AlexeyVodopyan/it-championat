@@ -38,7 +38,6 @@ export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
       <ResponsiveReactGridLayout
         className="layout"
         layouts={{lg: layout}}
-        cols={{lg: 12}}
         onLayoutChange={(Layout, allLayouts) => localStorage.setItem ("layout", JSON.stringify(Layout))}
       >
         <div key="a">a</div>

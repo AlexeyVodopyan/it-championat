@@ -13,25 +13,33 @@ import css from './Layout.module.css'
 interface IGridLayoutProps {
 
 }
+
+const defaultLayout = [
+  { i: "columnChart", x: 0, y: 0, w: 2, h: 2},
+  { i: "areaChart", x: 2, y: 0, w: 2, h: 2},
+  { i: "barChart", x: 4, y: 0, w: 2, h: 2},
+  { i: "barStackChart", x: 0, y: 2, w: 2, h: 2},
+  { i: "barGroupChart", x: 2, y: 2, w: 2, h: 2},
+  { i: "a", x: 4, y: 2, w: 1, h: 1},
+  { i: "b", x: 5, y: 2, w: 1, h: 1},
+  { i: "c", x: 4, y: 3, w: 1, h: 1},
+  { i: "d", x: 5, y: 3, w: 1, h: 1},
+]
+
 const ResponsiveReactGridLayout = WidthProvider(Responsive)
 export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
-  const layout = [
-    { i: "a", x: 0, y: 0, w: 1, h: 2},
-    { i: "b", x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
-    { i: "c", x: 4, y: 0, w: 1, h: 2},
-    { i: "d", x: 4, y: 0, w: 1, h: 2},
-    { i: "columnChart", x: 0, y: 1, w: 2, h: 2},
-    { i: "areaChart", x: 0, y: 1, w: 2, h: 2},
-    { i: "barChart", x: 0, y: 1, w: 1, h: 2},
-    { i: "barStackChart", x: 0, y: 1, w: 1, h: 2},
-    { i: "barGroupChart", x: 0, y: 1, w: 1, h: 2},
-  ];
+  const layoutStr = localStorage.getItem ("layout")
+  const layout = layoutStr == null
+      ? JSON.parse(layoutStr!)
+      : defaultLayout;
+
   return (
     <div className={css.mainContainer}>
       <ResponsiveReactGridLayout
         className="layout"
-        layouts={{md: layout}}
-        onLayoutChange={(Layout, allLayouts) => console.log('L26  === тут сохранение в локал стор', Layout, allLayouts)}
+        layouts={{lg: layout}}
+        cols={{lg: 12, md: 10, sm: 6, xs: 4, xxs: 2}}
+        onLayoutChange={(Layout, allLayouts) => localStorage.setItem ("layout", JSON.stringify(Layout))}
       >
         <div key="a">a</div>
         <div key="b">b</div>

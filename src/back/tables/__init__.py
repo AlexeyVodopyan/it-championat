@@ -1,4 +1,4 @@
-from src.back.tables.telemetry import Telemetry, ParamType
-from src.back.tables.well import Well
-from src.back.tables.company import Company
-from src.back.tables.equipment import Equipment, EquipmentSchedule
+from src.back.tables.company import Company, CompanyType  # noqa
+from src.back.tables.equipment import Equipment, EquipmentSchedule  # noqa
+from src.back.tables.telemetry import ParamType, Telemetry  # noqa
+from src.back.tables.well import Well, WellDrillingStatus  # noqa

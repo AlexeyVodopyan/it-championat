@@ -7,14 +7,18 @@ import factory
 from factory import fuzzy as fz
 
 # project
-from src import tables
+from src.back import tables
+from src.back.fixtures.well import WellFactory
 
 
 class TelemetryFactory(factory.alchemy.SQLAlchemyModelFactory):
-    well_id = factory.Faker("uuid4", cast_to=None)
+    id = factory.Faker("uuid4", cast_to=None)
     well_name = factory.Faker("word", locale="ru")
-    created_at = fz.FuzzyDateTime(dt.datetime(2021, 1, 1, hour=1, tzinfo=dt.timezone.utc))
+    created_at = fz.FuzzyDateTime(
+        dt.datetime(2021, 1, 1, hour=1, tzinfo=dt.timezone.utc)
+    )
     measured_at = fz.FuzzyDateTime(dt.datetime(2021, 1, 1, 1, tzinfo=dt.timezone.utc))
+    well = factory.SubFactory(WellFactory)
 
     @factory.lazy_attribute
     def parameter(self):

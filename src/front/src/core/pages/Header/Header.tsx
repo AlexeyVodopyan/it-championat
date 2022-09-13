@@ -6,19 +6,28 @@ import {User} from '@consta/uikit/User';
 import css from './header.module.css'
 import {IconRing} from "@consta/uikit/IconRing";
 import { Button } from '@consta/uikit/Button';
+import { MainMenu } from '../MainMenu';
 
 interface Props {
 
 }
 
 export const MainHeader: React.FC<Props> = ({}) => {
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
+  const onMenuOpen =  () => {
+    setIsSidebarOpen(true)
+  }
+  const onMenuClose =  () => {
+    setIsSidebarOpen(false)
+  }
   return (
+    <>
     <Header
       style={{padding: 0}}
       leftSide={
       <HeaderModule>
         <div className={'container align-center'}>
-          <Button iconLeft={IconHamburger} view={"clear"} className={css.ringIconMargin}/>
+          <Button iconLeft={IconHamburger} view={"clear"} className={css.ringIconMargin} onClick={onMenuOpen}/>
           <Text size={'l'} weight={'bold'}>
             Мониторинг бурения
           </Text>
@@ -35,6 +44,8 @@ export const MainHeader: React.FC<Props> = ({}) => {
 
       }
     />
+    <MainMenu onMenuClose={onMenuClose} isSidebarOpen={isSidebarOpen} />
+    </>
   );
 };
 

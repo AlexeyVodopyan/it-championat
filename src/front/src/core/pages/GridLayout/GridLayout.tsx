@@ -11,6 +11,7 @@ import "react-grid-layout/css/styles.css"
 import "react-resizable/css/styles.css"
 import css from './Layout.module.css'
 import {ScatterChart} from "./Widgets/Charts/ScatterChart";
+import {WaterfallChart} from "./Widgets/Charts/WaterfallChart";
 
 interface IGridLayoutProps {
 
@@ -18,7 +19,7 @@ interface IGridLayoutProps {
 const ResponsiveReactGridLayout = WidthProvider(Responsive)
 export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
   const layout = [
-    { i: "a", x: 0, y: 0, w: 1, h: 2},
+    { i: "waterfallChart", x: 0, y: 0, w: 1, h: 2},
     { i: "scatterChart", x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
     { i: "c", x: 4, y: 0, w: 1, h: 2},
     { i: "d", x: 4, y: 0, w: 1, h: 2},
@@ -35,14 +36,9 @@ export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
         layouts={{md: layout}}
         onLayoutChange={(Layout, allLayouts) => console.log('L26  === тут сохранение в локал стор', Layout, allLayouts)}
       >
-        <div key="a">a</div>
-        <div key="scatterChart" className={css.widgetContainer}>
-          <Text size={'s'}>Диаграмма рассеивания</Text>
-          <ScatterChart/>
-        </div>
-        <div key="c">c</div>
-        <div key={'d'} className={css.widgetContainer}>
-          <Block />
+        <div key="waterfallChart" className={css.widgetContainer}>
+          <Text size={'s'}>Каскадная диаграмма</Text>
+          <WaterfallChart/>
         </div>
         <div key={'columnChart'} className={css.widgetContainer}>
           <ColumnChart />

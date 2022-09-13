@@ -2,9 +2,11 @@ import datetime
 import enum
 import uuid
 
-from sqlalchemy import Column, Float, String, DateTime, Integer, ForeignKey
+from sqlalchemy import Column, DateTime, Float, ForeignKey, Integer, String
 from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy.orm import relationship
 from sqlalchemy_utils import ChoiceType
+
 from src.back.db import Base
 
 
@@ -24,12 +26,12 @@ class ParamType(enum.Enum):
     V3 = 13  # "объем в емкости 3, м3"
     V_CSGO = 14  # объем в цсго (циркуляционная система грубой очистки), м3"
     V_TOTAL = 15  # "общий объем, м3"
-    BPR = 16  # "бпр"
+    BPR = 16  # уровень в блоке приготовления бурового раствора
     SPEED = 17  # "скорость"
     TEMP_IN = 18  # "температура на входе, С"
     TEMP_OUT = 19  # "температура на выходе, C"
-    H1 = 20  # "нужно уточнить что за параметр на скрине, х/мин"
-    H2 = 21  # "нужно уточнить что за параметр на скрине, х/мин"
+    H1 = 20  # "число ходов бурового насоса 1, х/мин"
+    H2 = 21  # "число ходов бурового насоса 1, х/мин"
     C1_PERC = 22  # содержание метана, %"
     C1_PLUS_PERC = 23  # "содержание c1+, %"
     GAS_SUM = 24  # "суммарное содержание газа, %"
@@ -40,11 +42,17 @@ class ParamType(enum.Enum):
 
 class Telemetry(Base):
     __tablename__ = "telemetry"
-    id = Column(UUID(as_uuid=True), primary_key=True, comment="id скважины", default=uuid.uuid4)
+    __table_args = ({"comment": "Таблица скважинной телеметрии"},)
+    id = Column(
+        UUID(as_uuid=True), primary_key=True, comment="id скважины", default=uuid.uuid4
+    )
     well_name = Column(String, comment="название скважины")
     created_at = Column(DateTime, comment="Дата создания записи")
     measured_at = Column(
-        DateTime, default=datetime.datetime(1970, 1, 1), nullable=False, comment="Дата замера параметра"
+        DateTime,
+        default=datetime.datetime(1970, 1, 1),
+        nullable=False,
+        comment="Дата замера параметра",
     )
     parameter = Column(
         ChoiceType(ParamType, impl=Integer()),
@@ -52,5 +60,5 @@ class Telemetry(Base):
         nullable=False,
     )
     value = Column(Float, comment="Значение параметра")
-    well_id = Column(UUID(as_uuid=True), ForeignKey('well.id', ondelete="CASCADE"))
-
+    well = relationship("Well", cascade="all, delete", uselist=False)
+    well_id = Column(UUID(as_uuid=True), ForeignKey("well.id", ondelete="CASCADE"))

@@ -35,15 +35,6 @@ export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
         layouts={{md: layout}}
         onLayoutChange={(Layout, allLayouts) => console.log('L26  === тут сохранение в локал стор', Layout, allLayouts)}
       >
-        <div key="waterfallChart" className={css.widgetContainer}>
-          <Text size={'s'}>Каскадная диаграмма</Text>
-          <WaterfallChart/>
-        </div>
-        <div key="b">b</div>
-        <div key="c">c</div>
-        <div key={'d'} className={css.widgetContainer}>
-          <Block />
-        </div>
         <div key={'columnChart'} className={css.widgetContainer}>
           <ColumnChart />
         </div>

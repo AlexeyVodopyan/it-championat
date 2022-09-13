@@ -40,6 +40,10 @@ export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
           <Text size={'s'}>Каскадная диаграмма</Text>
           <WaterfallChart/>
         </div>
+        <div key="scatterChart" className={css.widgetContainer}>
+          <Text size={'s'}>Диаграмма рассеивания</Text>
+          <ScatterChart/>
+        </div>
         <div key={'columnChart'} className={css.widgetContainer}>
           <ColumnChart />
         </div>

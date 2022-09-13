@@ -54,3 +54,11 @@ export const  MOCK_DATA_FOR_BAR_GROUP_CHART = [
     { parameter: 'Параметр 4', number: 301, groupName: 'B' },
     { parameter: 'Параметр 5', number: 167, groupName: 'B' },
 ]
+
+export const MOCK_DATA_FOR_WATERFALL_CHART = [
+    { x: '10', y: 120 },
+    { x: '15', y: 900 },
+    { x: '20', y: 200 },
+    { x: '25', y: 300 },
+    { x: '30', y: 1200 }
+]

@@ -55,6 +55,12 @@ export const  MOCK_DATA_FOR_BAR_GROUP_CHART = [
     { parameter: 'Параметр 5', number: 167, groupName: 'B' },
 ]
 
+export const MOCK_DATA_FOR_SCATTER_CHART = [
+    { temperature: 0, ufo: 0, place: 'Тмутаракань' },
+    { temperature: 1, ufo: 0, place: 'Бобруйск' },
+    { temperature: 3, ufo: 5, place: 'Урюпинск'}
+]
+
 export const MOCK_DATA_FOR_WATERFALL_CHART = [
     { x: '10', y: 120 },
     { x: '15', y: 900 },

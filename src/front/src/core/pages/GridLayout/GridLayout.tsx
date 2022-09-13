@@ -12,6 +12,7 @@ import "react-resizable/css/styles.css"
 import css from './Layout.module.css'
 import {ScatterChart} from "./Widgets/Charts/ScatterChart";
 import {WaterfallChart} from "./Widgets/Charts/WaterfallChart";
+import {RadarChart} from "./Widgets/Charts/RadarChart";
 
 interface IGridLayoutProps {
 
@@ -21,7 +22,7 @@ export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
   const layout = [
     { i: "waterfallChart", x: 0, y: 0, w: 1, h: 2},
     { i: "scatterChart", x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
-    { i: "c", x: 4, y: 0, w: 1, h: 2},
+    { i: "radarChart", x: 4, y: 0, w: 1, h: 2},
     { i: "d", x: 4, y: 0, w: 1, h: 2},
     { i: "columnChart", x: 0, y: 1, w: 2, h: 2},
     { i: "areaChart", x: 0, y: 1, w: 2, h: 2},
@@ -43,6 +44,10 @@ export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
         <div key="scatterChart" className={css.widgetContainer}>
           <Text size={'s'}>Диаграмма рассеивания</Text>
           <ScatterChart/>
+        </div>
+        <div key="radarChart" className={css.widgetContainer}>
+          <Text size={'s'}>Радарная диаграмма</Text>
+          <RadarChart/>
         </div>
         <div key={'columnChart'} className={css.widgetContainer}>
           <ColumnChart />

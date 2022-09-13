@@ -8,12 +8,13 @@
 }
 .chartWidget {
     overflow: hidden;
-    width: 100em;
-    border: 1px solid black;
+    width: 100%;
     display: flex;
     flex: 1;
 }
 .widgetContainer {
+    flex-direction: column;
+    border: 1px solid black;
     display: flex;
     flex-grow: 1;
 }

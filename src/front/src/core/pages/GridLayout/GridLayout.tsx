@@ -50,18 +50,23 @@ export const GridLayout: React.FC<IGridLayoutProps> = ({}) => {
           <RadarChart/>
         </div>
         <div key={'columnChart'} className={css.widgetContainer}>
+          <Text size={'s'}>Столбчатая диаграмма</Text>
           <ColumnChart />
         </div>
         <div key={'areaChart'} className={css.widgetContainer}>
+          <Text size={'s'}>Диаграмма областей</Text>
           <AreaChart />
         </div>
         <div key={'barChart'} className={css.widgetContainer}>
+          <Text size={'s'}>Столбчатая диаграмма (гор.)</Text>
           <BarChart />
         </div>
         <div key={'barStackChart'} className={css.widgetContainer}>
+          <Text size={'s'}>Столбчатая диаграмма (гор.) с накоплением</Text>
           <BarStackChart />
         </div>
         <div key={'barGroupChart'} className={css.widgetContainer}>
+          <Text size={'s'}>Столбчатая диаграмма (гор.) с группировкой</Text>
           <BarGroupChart />
         </div>
       </ResponsiveReactGridLayout>

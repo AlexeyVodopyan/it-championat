@@ -2,7 +2,7 @@ import { Modal } from '@consta/uikit/Modal';
 import { Text } from '@consta/uikit/Text';
 import { Button } from '@consta/uikit/Button';
 import { Table, TableColumn } from "@consta/uikit/Table";
-import { IconClose } from '@consta/uikit/__internal__/cjs-src/icons/IconClose/IconClose';
+import { IconClose } from '@consta/uikit/IconClose';
 import React from 'react';
 
 import { EquipmentInfo, EquipmentInformationProps } from './types';
@@ -36,9 +36,9 @@ const columns: TableColumn<EquipmentInfo>[] = [
     }
 ]
 
-export const EquipmentInfoModal: React.FC<EquipmentInformationProps> = ({ toolId, closeModal}) => {
+export const EquipmentInfoModal: React.FC<EquipmentInformationProps> = ({ equipmentId, closeModal}) => {
     const equipment:EquipmentInfo = {
-        id: toolId,
+        id: equipmentId,
         factoryNumber: '12',
         model: 'Пульт управления ПУ-1',
         status: 'В резерве',

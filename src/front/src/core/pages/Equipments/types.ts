@@ -1,5 +1,5 @@
 export type EquipmentInformationProps = {
-    toolId: string
+    equipmentId: string
     closeModal: () => void
 }
 

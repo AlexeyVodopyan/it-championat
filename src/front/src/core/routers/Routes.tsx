@@ -4,6 +4,7 @@ import Layout from '../layout/Layout'
 import { Responses404 } from '@consta/uikit/Responses404'
 import { Main } from '../pages'
 import { Contracts } from '../pages/Contracts/Contracts'
+import { Equipments } from '../pages/Equipments/Equipments'
 import { PagesNames } from './pages'
 import { Button } from '@consta/uikit/Button'
 
@@ -16,8 +17,9 @@ export const AppRoutes: React.FC = props => {
     <Routes>
       <Route path={'/'} element={<Layout />}>
         <Route index element={<Main />}></Route>
-        <Route path={`${PagesNames.Tablet}`} element={<Main />} />
+        <Route path={`${PagesNames.GTI}`} element={<Main />} />
         <Route path={`${PagesNames.Contracts}`} element={<Contracts />} />
+        <Route path={`${PagesNames.Equipment}`} element={<Equipments />} />
         <Route path={`*`} element={<Responses404 actions={<Button size="m" view="ghost" label="Домой" onClick={onBackClick} />} />} />
       </Route>
     </Routes>

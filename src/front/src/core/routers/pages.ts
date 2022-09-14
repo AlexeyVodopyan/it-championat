@@ -1,5 +1,5 @@
 export enum PagesNames {
-  Tablet = 'tablet',
+  GTI = 'gti',
   Contracts = 'contracts',
   Equipment = 'equipment',
 }

@@ -1,3 +1,8 @@
+from .auth import router as auth_router # noqa
+from .user import router as user_router # noqa
+from .chat import router as chat_router # noqa
+
+
 from fastapi import APIRouter
 # from src.models.models import VlpCalcRequest, VlpCalcResponse
 # from src.routes.queries import save_init_data, save_vlp_data, get_check_well_data_exists, get_check_vlp_exists

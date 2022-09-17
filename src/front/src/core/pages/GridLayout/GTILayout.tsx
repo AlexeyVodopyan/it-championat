@@ -20,6 +20,8 @@ import {AlarmComponents} from './GTIWidgets/AlarmComponents';
 import {GtiChart} from './GTIWidgets/GTIChart';
 import {DrillingInfo} from './GTIWidgets/DrillingInfo';
 import {Chat} from './GTIWidgets/Chat';
+import {getUsers} from '../../api';
+import {login} from '../../api/CalculateService';
 
 interface IGridLayoutProps {
 
@@ -31,7 +33,6 @@ interface Props {
 
 export const GtiLayout: React.FC<Props> = ({}) => {
     const [offset, setOffset]  = useState(0)
-
     const layout = [
         { i: "LineChart", x: 0, y: 0, w: 6, h: 4},
         { i: "DrillingInfo", x: 6, y: 0, w: 2, h: 4},
@@ -52,7 +53,7 @@ export const GtiLayout: React.FC<Props> = ({}) => {
             >
                 <div key={'LineChart'} className={css.widgetContainer}>
                     <Text size={'s'}>Линейная диаграмма</Text>
-                    <GtiChart chartsNumber={8} onChangeLine={(arg) => {console.log(arg)}} division={100}/>
+                    <GtiChart chartsNumber={8} onChangeLine={() => {}} division={100}/>
                 </div>
                 <div key={'DrillingInfo'} className={css.widgetContainer}>
                     <Text size={'s'}>Информация о ходе бурения</Text>

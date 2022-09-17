@@ -1,1 +1,1 @@
-export {calculate} from './CalculateService'
+export {calculate, getUsers} from './CalculateService'

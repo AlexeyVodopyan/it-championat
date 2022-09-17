@@ -4,7 +4,7 @@ export const getDate = (date: number | Date) => {
 
     let options = { weekday: "long", year: 'numeric', month: 'long', day: 'numeric'}
     return new Intl.DateTimeFormat('ru',
-        {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}).format(date)
+        {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'}).format(date)
 }
 export const getSeries = (data: dataType):  highcharts.SeriesLineOptions[] => {
   const vlp: highcharts.SeriesLineOptions = {

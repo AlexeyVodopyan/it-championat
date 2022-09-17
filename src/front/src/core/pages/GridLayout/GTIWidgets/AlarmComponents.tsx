@@ -13,8 +13,16 @@ export const AlarmComponents: React.FC<Props> = ({}) => {
     return (
         <div className={`${css.notesContainer} container-column`}>
             <Card verticalSpace="xs" horizontalSpace="xs" status="alert" className={css.card}>
-                <IconLightningBolt view={'alert'} /> <Text>Отступы 'xs'</Text>
+                <IconLightningBolt view={'alert'} /> <Text>Плотность раствора на выходе меньше 800 кг/м3</Text>
                 <Text>{getDate(Date.now())}</Text>
+            </Card>
+            <Card verticalSpace="xs" horizontalSpace="xs" status="alert" className={css.card}>
+                <IconLightningBolt view={'alert'} /> <Text>Вес на крюке больше 100 т</Text>
+                <Text>{getDate(Date.now()+332115)}</Text>
+            </Card>
+            <Card verticalSpace="xs" horizontalSpace="xs" status="alert" className={css.card}>
+                <IconLightningBolt view={'alert'} /> <Text>Отклонение от плановой траектории больше 20%</Text>
+                <Text>{getDate(Date.now()+532115)}</Text>
             </Card>
         </div>
     );

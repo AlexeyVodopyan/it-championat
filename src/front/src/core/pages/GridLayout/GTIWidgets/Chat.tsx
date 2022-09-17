@@ -88,7 +88,7 @@ export const Chat: React.FC<Props> = ({}) => {
             </div>
             <div className={`${css.inputContainer} container-row`}>
                 <TextField value={message} onChange={handleChange} className={'flex-grow-1 m-b-2'}/>
-                <Button label={'send'} onClick={onMessageSend}/>
+                <Button label={'Отправить'} onClick={onMessageSend}/>
             </div>
         </div>
     );

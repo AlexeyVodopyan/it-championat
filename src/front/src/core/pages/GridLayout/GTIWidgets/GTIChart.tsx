@@ -7,7 +7,7 @@ interface Props {
 }
 
 
-
+const constants = ['Вес на крюке, т', 'Момент на роторе, кН*м', 'Мех скорость, м/ч','Нагрузка, т', 'Давление, атм', 'Обороты ротора, об/мин', 'Q на входе, л/с', 'Q на выходе, л/с']
 export const GtiChart: React.FC<Props> = ({onChangeLine, division, chartsNumber}) => {
     const [data, setData]  = useState<any[]>([])
     const data1 = useMemo(() => {
@@ -24,7 +24,7 @@ export const GtiChart: React.FC<Props> = ({onChangeLine, division, chartsNumber}
 
             const interval = setInterval(() => {
                 let newData = {
-                    country:  'United Kingdom' + index,
+                    country:  constants[index],
                     year: randomIntFromInterval(9*(index+1), 10*(index+1)),
                     value: count
                 }

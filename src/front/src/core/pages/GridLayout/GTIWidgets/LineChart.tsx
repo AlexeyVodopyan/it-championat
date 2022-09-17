@@ -20,7 +20,7 @@ export const LineChart: React.FC<Props> = ({onChangeLine, division}) => {
 
         const interval = setInterval(() => {
             let newData = {
-                country:  'United Kingdom',
+                country:  'Плановый профиль',
                 year: randomIntFromInterval(1, 2),
                 value: count
             }
@@ -36,7 +36,7 @@ export const LineChart: React.FC<Props> = ({onChangeLine, division}) => {
                     return  -1
                 return 0
             }))
-        }, 2000)
+        }, 1000)
         return () => {
             clearInterval(interval)
         }
@@ -46,8 +46,8 @@ export const LineChart: React.FC<Props> = ({onChangeLine, division}) => {
         let count = 0
         const interval = setInterval(() => {
             let newData = {
-                country:  'United States',
-                year: randomIntFromInterval(18, 19),
+                country:  'Фактический профиль',
+                year: randomIntFromInterval(1, 4),
                 value: count
             }
             count = count - 0.25
@@ -58,7 +58,7 @@ export const LineChart: React.FC<Props> = ({onChangeLine, division}) => {
                     return  -1
                 return 0
             }))
-        }, 2000)
+        }, 1000)
         return () => {
             clearInterval(interval)
         }

@@ -31,7 +31,7 @@ html = """
         <script>
             var client_id = Date.now()
             document.querySelector("#ws-id").textContent = client_id;
-            var ws = new WebSocket(`ws://localhost:8001/chat/ws/055643a4-815a-4fc2-ab9b-a30ced663aff?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuZWZ0ZWdhem92QGV4YW1wbGUuY29tIiwiZXhwIjoxNjYzMjU2MDc5fQ.00o8S7G4f2WkB3waABfC3lc5XtkUEKgDTzyPwzovCAU`);
+            var ws = new WebSocket(`ws://localhost:8001/chat/ws/055643a4-815a-4fc2-ab9b-a30ced663aff?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1Z2xldm9kb3JvZG92QGV4YW1wbGUuY29tIiwiZXhwIjoxNjYzMjYwOTU3fQ.b4BelO-zXmR_yDnzE8DgdsDkQ3zsTPLH5jLiGHI0Df0`);
             ws.onmessage = function(event) {
                 var messages = document.getElementById('messages')
                 var message = document.createElement('li')

@@ -34,7 +34,7 @@ pre-commit install
 5) Запустите файлик `src/app.py` через pycharm или командой
 
 ```bash
-python src/app.py
+python src/back/app.py
 ```
 
 6) Теперь приложение запущено и доступно по адресу `localhost:8001/docs`

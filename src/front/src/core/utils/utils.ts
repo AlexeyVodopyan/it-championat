@@ -1,5 +1,10 @@
 import highcharts from 'highcharts';
 
+export const getDate = (date: number | Date) => {
+    let options = { weekday: "long", year: 'numeric', month: 'long', day: 'numeric'}
+    return new Intl.DateTimeFormat('ru',
+        {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}).format(date)
+}
 export const getSeries = (data: dataType):  highcharts.SeriesLineOptions[] => {
   const vlp: highcharts.SeriesLineOptions = {
     name: 'VLP',

@@ -13,6 +13,7 @@ import css from './Layout.module.css'
 import {ScatterChart} from "./Widgets/Charts/ScatterChart";
 import {WaterfallChart} from "./Widgets/Charts/WaterfallChart";
 import {RadarChart} from "./Widgets/Charts/RadarChart";
+import { LineChart } from './GTIWidgets/LineChart';
 
 interface IGridLayoutProps {
 
@@ -27,6 +28,7 @@ const defaultLayout = [
     {i: "barChart", x: 5, y: 3, w: 1, h: 1},
     {i: "barStackChart", x: 5, y: 4, w: 4, h: 1},
     {i: "barGroupChart", x: 9, y: 0, w: 2, h: 4},
+    { i: "LineChart", x: 3, y: 0, w: 7, h: 5},
 ]
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive)

@@ -1,0 +1,7 @@
+.notesContainer {
+    padding: 5px;
+    overflow-y: scroll;
+}
+.card {
+    margin-bottom: 5px;
+}

@@ -13,7 +13,7 @@ interface Props {
 }
 
 export const MainHeader: React.FC<Props> = ({}) => {
-  const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
   const onMenuOpen =  () => {
     setIsSidebarOpen(true)
   }

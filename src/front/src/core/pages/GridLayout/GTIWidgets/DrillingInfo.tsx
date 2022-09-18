@@ -13,20 +13,19 @@ export const DrillingInfo: React.FC<Props> = ({}) => {
     return (
         <div className={`${css.notesContainer} container-column`}>
             <Card verticalSpace="xs" horizontalSpace="xs" className={css.card}>
-                <IconInfo view={'brand'} /> <Text>Отступы 'xs'</Text>
+                <Text>Скважина: 1R</Text>
+            </Card>
+            <Card verticalSpace="xs" horizontalSpace="xs" className={css.card}>
+                <Text>Забой, м: 2986</Text>
                 <Text>{getDate(Date.now())}</Text>
             </Card>
             <Card verticalSpace="xs" horizontalSpace="xs" className={css.card}>
-                <IconInfo view={'brand'} /> <Text>Отступы 'xs'</Text>
-                <Text>{getDate(Date.now())}</Text>
+                <Text>Инструмент, м: 2406</Text>
+                <Text>{getDate(Date.now()+132115)}</Text>
             </Card>
             <Card verticalSpace="xs" horizontalSpace="xs" className={css.card}>
-                <IconInfo view={'brand'} /> <Text>Отступы 'xs'</Text>
-                <Text>{getDate(Date.now())}</Text>
-            </Card>
-            <Card verticalSpace="xs" horizontalSpace="xs" className={css.card}>
-                <IconInfo view={'brand'} /> <Text>Отступы 'xs'</Text>
-                <Text>{getDate(Date.now())}</Text>
+                <Text>Высота над забоем, м: 580</Text>
+                <Text>{getDate(Date.now()+151224)}</Text>
             </Card>
         </div>
     );

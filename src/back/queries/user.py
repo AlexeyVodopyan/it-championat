@@ -20,7 +20,7 @@ def create(db: Session, user_schema: UserInSchema) -> User:
         name=user_schema.name,
         email=user_schema.email,
         hashed_password=hash_password(user_schema.password),
-        company_name=user_schema.company_name
+        company_name=user_schema.company_name,
     )
     db.add(user)
     db.commit()

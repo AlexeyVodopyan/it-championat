@@ -15,8 +15,11 @@ def get_messages(db: Session, room_id: uuid.UUID):
     :param room_id: идентификатор комнаты
     """
 
-    query = db.query(User.name, User.company_name, Message.message, Message.created_at)\
-        .filter(and_(User.id == Message.user_id, Message.room_id == room_id)).order_by(desc(Message.created_at))
+    query = (
+        db.query(User.name, User.company_name, Message.message, Message.created_at)
+        .filter(and_(User.id == Message.user_id, Message.room_id == room_id))
+        .order_by(desc(Message.created_at))
+    )
     return query.all()
 
 
@@ -30,11 +33,7 @@ def save_message(db: Session, message: str, room_id: uuid.UUID, user_id: int):
     :param user_id: идентификатор пользователя
     """
 
-    msg = Message(
-        room_id=room_id,
-        user_id=user_id,
-        message=message
-    )
+    msg = Message(room_id=room_id, user_id=user_id, message=message)
     db.add(msg)
     db.commit()
     db.refresh(msg)
